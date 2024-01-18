@@ -3,11 +3,11 @@ import replicate
 import os
 
 #app title
-st.set_page_config(page_title = 'Llama Chatbot')
+st.set_page_config(page_title = 'Chatbot')
 
 #Replicate Credentials
 with st.sidebar:
-    st.title('Llama Chatbot')
+    st.title('Chatbot')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
