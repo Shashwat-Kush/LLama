@@ -9,12 +9,12 @@ st.set_page_config(page_title = 'Llama Chatbot')
 with st.sidebar:
     st.title('Llama Chatbot')
     if 'REPLICATE_API_TOKEN' in st.secrets:
-        st.success('API key already provided',icon='()')
+        st.success('API key already provided')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
     else:
         replicate_api = st.text_input('Enter Replicate API token:',type = 'password')
         if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
-            st.warning('Please enter a valid API key',icon = ':(')
+            st.warning('Please enter a valid API key')
         else:
             st.success('Proceed to entering your prompt message!')
 os.environ['REPLICATE_API_TOKEN'] = replicate_api
